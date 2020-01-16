@@ -4,11 +4,14 @@
 
 Compile time : 16/1/2020
 
-Sources : [google/bbr](https://github.com/google/bbr.git)
+Support : Debian 10 (Buster)
 
 ```
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr2
-net.ipv4.tcp_ecn = 1
-net.ipv4.tcp_ecn_fallback = 1
+echo "net.core.default_qdisc = fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control = bbr2" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_ecn = 1" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_ecn_fallback = 1" >> /etc/sysctl.conf
+sysctl -p
 ```
+
+Sources : [google/bbr](https://github.com/google/bbr.git)
